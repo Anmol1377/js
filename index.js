@@ -95,3 +95,26 @@ if (ageconf(age)) {
 }
 runagain = confirm("Do you want to play again?");
 }
+
+
+
+// rock , paper sciere game exercisw 
+alert("please enter rock,paper,scier");
+let user = prompt("Please enter your choice: ");
+
+let roboIndex = Math.floor(Math.random() * 3);
+let roboChoicearr = ["rock","paper","scier"];
+let roboChoice = roboChoicearr[roboIndex]
+console.log(roboChoice);
+var userconfrm = false;
+while (userconfrm == false){
+if(user == roboChoice){
+    console.log("its tie");
+}
+else if (user == "rock" && roboChoice == "scier" || user == "paper" && roboChoice == "rock" || user == "scier" && roboChoice == "paper"){
+    console.log("you win");
+}else {
+    console.log("computer win");
+}
+ userconfrm = confirm("do you want to play again");
+}
