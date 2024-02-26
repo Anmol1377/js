@@ -146,3 +146,32 @@ function calculate(x, y, operation) {
 console.log(calculate(10, 5, add));
 
 console.log(calculate(10, 5, divide));
+
+
+
+
+// promise with then catch 
+
+function getData() {
+    return new Promise((resolve, reject) => {
+        // Simulating an asynchronous operation
+        setTimeout(() => {
+            const success = Math.random() < 0.5; // 50% chance of success
+
+            if (success) {
+                resolve("Data successfully retrieved!");
+            } else {
+                reject(new Error("Failed to retrieve data."));
+            }
+        }, 1000); // Simulating a delay of 1 second
+    });
+}
+
+// Using the promise with then and catch
+getData()
+    .then((data) => {
+        console.log("Success:", data);
+    })
+    .catch((error) => {
+        console.error("Error:", error.message);
+    });
